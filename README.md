@@ -116,6 +116,7 @@ module half_adder_s(a,b,sum,carry);
 	xor X1(sum,a,b);
 
 endmodule 	
+```
 
 #### Testbench code
 ```
@@ -144,6 +145,8 @@ endmodule
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0618b54a-41d7-4626-bf34-f9463da1aaaa)
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/19eb59d5-ac80-48de-8b29-efe68fb6d52e)
+
+#### Quartus Prime Synthesis Result
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/11187d0b-e2e0-4a26-ae41-501bb3b3a382)
 
