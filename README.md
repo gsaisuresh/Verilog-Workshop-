@@ -57,3 +57,51 @@ endmodule
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f3f0e37d-c047-4079-b8f1-5999091437f0)
 
 ### Behavioral Design and Testbench for one bit half adder in Verilog
+
+#### Verilog code
+```
+module half_adder_b(input a, input b, output reg sum, output reg carry);
+	always@(a,b)
+		begin
+			sum = a^b;
+			carry = a&b;
+		end
+endmodule
+```
+
+#### Testbench code
+```
+module half_adder_btb;
+	reg a,b;
+	wire sum,carry;
+	integer i;
+	
+	half_adder_b DUT(a,b,sum,carry);
+	
+	initial 
+		begin
+			for(i=0;i<4;i=i+1)
+				begin
+					{a,b} = i;
+					#10;
+				end
+		end
+		
+	initial 
+		$monitor("time=%d, a=%b, b=%b, sum=%b, carry=%b", $time, a,b,sum,carry);
+
+	initial	#50 $finish;
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/391b4fcf-61f6-4f4a-95f4-00b77bb05113)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/cd11ab8b-a9b6-4de7-831d-35637f1a079c)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/b5a9d9a2-738e-4d6b-b87c-ebdd9118f9db)
+
+### Structural Design and Testbench for one bit half adder in Verilog
