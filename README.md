@@ -56,4 +56,4 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f3f0e37d-c047-4079-b8f1-5999091437f0)
 
-
+### Behavioral Design and Testbench for one bit half adder in Verilog
