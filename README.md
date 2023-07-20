@@ -105,3 +105,48 @@ endmodule
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/b5a9d9a2-738e-4d6b-b87c-ebdd9118f9db)
 
 ### Structural Design and Testbench for one bit half adder in Verilog
+
+#### Verilog code
+```
+module half_adder_s(a,b,sum,carry);
+	input a,b;
+	output sum,carry;
+	
+	and A1(carry,a,b);
+	xor X1(sum,a,b);
+
+endmodule 	
+
+#### Testbench code
+```
+module half_adder_stb;
+	reg a,b;
+	wire sum,carry;
+	integer i;
+	
+	half_adder_s DUT(a,b,sum,carry);
+	
+	initial 
+		fork
+			for(i=0;i<4;i=i+1)
+				begin
+					{a,b} = i;
+					#10;
+				end
+		$monitor("time=%d, a=%b, b=%b, sum=%b, carry=%b", $time, a,b,sum,carry);
+		#40 $finish;
+	    join
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0618b54a-41d7-4626-bf34-f9463da1aaaa)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/19eb59d5-ac80-48de-8b29-efe68fb6d52e)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/11187d0b-e2e0-4a26-ae41-501bb3b3a382)
+
+
+
+
