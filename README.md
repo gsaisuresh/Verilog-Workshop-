@@ -245,3 +245,49 @@ endmodule
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/95522b96-73b1-4787-8036-89382adb8061)
 
 ### Structural Design and Testbench for one bit full adder in Verilog using primitives
+
+#### Verilog code
+```
+module full_adder_s(input a,b,cin, output sum,carry);
+	
+	wire n1,n2,n3;
+	xor X1(sum,a,b,cin);
+	and A1(n1,a,b);
+	and A2(n2,b,cin);
+	and A3(n3,a,cin);
+	or O1(carry,n1,n2,n3);
+	
+endmodule
+```
+
+#### Testbench code
+```
+module full_adder_stb;
+	reg a,b,cin;
+	wire sum,carry;
+	integer i;
+	
+	full_adder_s DUT(a,b,cin,sum,carry);
+	
+	initial 
+		fork
+			for(i=0;i<8;i=i+1)
+				begin
+					{a,b,cin} = i;
+					#10;
+				end
+		$monitor("time=%d, a=%b, b=%b, carryin=%b, sum=%b, carry=%b", $time, a,b,cin,sum,carry);
+		#80 $finish;
+		join
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/13cf2668-c932-4083-924b-84e08f800921)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/dac31f90-49e6-4c4a-baa6-a939b1eabb5e)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/a19b4128-32ef-46f5-b1c5-de2c7b4ca675)
