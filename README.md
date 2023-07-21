@@ -293,3 +293,74 @@ endmodule
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/a19b4128-32ef-46f5-b1c5-de2c7b4ca675)
 
 ### Structural Design and Testbench for one bit full adder in Verilog using HalfAdder
+
+#### Verilog Code 
+```
+module full_adder_sha(input a,b,cin, output sum,carry);
+	wire n1,n2,n3;
+	
+	half_adder_d HA1(a,b,n1,n2);
+	half_adder_d HA2(n1,cin,sum,n3);
+	or O1(carry,n2,n3);
+
+endmodule
+```
+
+#### Testbench code
+```
+module full_adder_shatb;
+	reg a,b,cin;
+	wire sum,carry;
+	
+	full_adder_sha DUT(a,b,cin,sum,carry);
+	
+	task initialization;
+		begin 
+			{a,b,cin} = 0;
+		end
+	endtask
+	
+	task inputs(input [2:0]X);
+		begin
+			{a,b,cin} = X;
+		end
+	endtask
+	
+	initial 
+		begin
+			initialization;
+			#10;
+			inputs(3'b001);
+			#10;
+			inputs(3'b010);
+			#10;
+			inputs(3'b011);
+			#10;
+			inputs(3'b100);
+			#10;
+			inputs(3'b101);
+			#10;
+			inputs(3'b110);
+			#10;
+			inputs(3'b111);
+			#10;
+		end
+	
+	initial
+	$monitor("time=%d, a=%b, b=%b, carryin=%b, sum=%b, carry=%b", $time, a,b,cin,sum,carry);
+		
+	initial	#90 $finish;	
+
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/5f455949-d3b1-447f-975e-87cd92dcfb5a)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/a5f29bef-456b-4bc9-af30-f5b8e990dd8f)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/4d6d9874-374e-49d6-8c0f-5ab114ace0d0)
+
