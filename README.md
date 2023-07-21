@@ -7,8 +7,9 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Behavioral Design and Testbench for one bit half adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#behavioral-design-and-testbench-for-one-bit-half-adder-in-verilog)
     - [Structural Design and Testbench for one bit half adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#structural-design-and-testbench-for-one-bit-half-adder-in-verilog)
     - [DataFlow based Design and Testbench for one bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#dataflow-based-design-and-testbench-for-one-bit-full-adder-in-verilog)
-    - [Behavioral Design and Testbench for one bit full adder in Verilog]()
-    - [Structural Design and Testbench for one bit full adder in Verilog]
+    - [Behavioral Design and Testbench for one bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#behavioral-design-and-testbench-for-one-bit-full-adder-in-verilog)
+    - [Structural Design and Testbench for one bit full adder in Verilog using primitives]
+    - [Structural Design and Testbench for one bit full adder in Verilog using HalfAdder]
     - [Verilog code which shows usage of all operators with $display and $monitor statements].
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
