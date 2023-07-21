@@ -150,6 +150,50 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/11187d0b-e2e0-4a26-ae41-501bb3b3a382)
 
+### DataFlow based Design and Testbench for one bit full adder in Verilog
 
+#### Verilog code
+```
+module full_adder_d(a,b,cin,sum,carry);
+	input a,b,cin;
+	output sum,carry;
+	assign sum = a^b^cin;
+	assign carry = (a&b) | (b&cin) | (a&cin) ; 
+endmodule 
+```
+
+#### Testbench code
+```
+module full_adder_dtb;
+	reg a,b,cin;
+	wire sum,carry;
+	integer i;
+	
+	full_adder_d DUT(a,b,cin,sum,carry);
+	
+	initial 
+		begin
+			for(i=0;i<8;i=i+1)
+				begin
+					{a,b,cin} = i;
+					#10;
+				end
+		end
+		
+	initial 
+		$monitor("time=%d, a=%b, b=%b, carryin=%b, sum=%b, carry=%b", $time, a,b,cin,sum,carry);
+
+	initial	#100 $finish;
+	
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/548a2e64-312f-43c6-877e-5cb91095a34e)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0165743d-cc26-48dd-93a5-e45758841aff)
+
+#### Quartus Prime Synthesis Result
 
 
