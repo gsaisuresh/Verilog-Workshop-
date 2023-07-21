@@ -198,3 +198,48 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/459fcfe4-fc2d-4f2a-b64d-0676f63a904e)
 
+### Behavioral Design and Testbench for one bit full adder in Verilog
+
+#### Verilog code
+```
+module full_adder_b(input a, input b, input cin, output reg sum, output reg carry);
+	always@(*)
+		begin
+			sum = a^b^cin;
+			carry = (a&b) | (b&cin) | (a&cin) ;
+		end
+endmodule 
+```
+
+#### Testbench code
+```
+module full_adder_btb;
+	reg a,b,cin;
+	wire sum,carry;
+	integer i;
+	
+	full_adder_b DUT(a,b,cin,sum,carry);
+	
+	initial 
+		fork
+			for(i=0;i<8;i=i+1)
+				begin
+					{a,b,cin} = i;
+					#10;
+				end
+		$monitor("time=%d, a=%b, b=%b, carryin=%b, sum=%b, carry=%b", $time, a,b,cin,sum,carry);
+		#90 $finish;
+		join
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0456802b-1123-4528-aa75-59dd5e1b0679)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0f4c939e-069c-4b24-a5fa-de39cfd96e09)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/95522b96-73b1-4787-8036-89382adb8061)
+
