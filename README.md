@@ -778,6 +778,62 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/6117c9e2-7f82-43d8-b1e2-6b5a7ac4f720)
 
+### Design and Testbench 2×4 Decoder in Verilog
+
+#### Model-1 2x4 Decoder dataflow model
+
+#### Verilog code
+```
+module decoder_2x4_d(EN,D,Y);
+	input EN;
+	input [1:0] D;
+	output [3:0] Y;
+	
+	assign Y[0] = EN & ~D[1] & ~D[0];
+	assign Y[1] = EN & ~D[1] & D[0];
+	assign Y[2] = EN & D[1] & ~D[0];
+	assign Y[3] = EN & D[1] & D[0];
+
+endmodule
+```
+
+#### Testbench code
+```
+module decoder_2x4_dtb;
+
+	reg EN;
+	reg [1:0] D;
+	wire [3:0] Y;
+	integer i;
+	
+	decoder_2x4_d DUT (EN,D,Y);
+	
+	initial 
+		begin
+			for(i=0;i<8;i=i+1)
+				begin	
+					{EN,D} = i;
+				    #10;
+				end
+		end
+	
+	initial $monitor("time=%d, enable=%b, input=%b, output=%b",$time,EN,D,Y);
+	
+	initial #80 $finish;
+	
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/422315e9-98d2-4340-8b63-3876fe0ede17)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/df7ded23-7c70-45be-b8fa-f4b0177251a0)
+
+#### Quartusprime Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/40c1c2fd-1702-400a-918e-e2e7779ea0b7)
+
 
 
 
