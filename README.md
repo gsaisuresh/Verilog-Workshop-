@@ -550,3 +550,57 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/595ec8e7-587d-411f-81e2-f65516f1b6a9)
 
+#### Design and Testbench for 4:1 Mux in Verilog
+
+#### Model-1 : 4:1 Mux Dataflow modelling
+
+#### Verilog code
+```
+module mux_4_1_d1(I,S,Y);
+	input [3:0]I;
+	input [1:0]S;
+	output Y;
+	
+    assign Y = (S==2'd0) ? I[0] : ((S==2'd1) ? I[1] : ((S==2'd2) ? I[2] : I[3])) ;
+
+endmodule 
+```
+
+#### Testbench code
+```
+module mux_4_1_d1tb;
+	reg [3:0]I;
+	reg [1:0]S;
+	wire Y;
+	integer i;
+	
+	mux_4_1_d1 DUT(I,S,Y);
+	
+	initial 
+		begin
+			for(i=0;i<64;i=i+1)
+				begin
+					{I,S} = i;
+					#10;
+				end
+		end
+		
+	initial 
+		$monitor("time=%d, I=%b, S=%b, Y=%b", $time,I,S,Y);
+	
+	initial #640 $finish;
+	
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/add9a4d7-08c0-4618-a86d-e3c752966a1e)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/5fefaf92-e5ef-46d2-bbc9-7a35cd03dda3)
+
+#### Quartusprime Synthesis 
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/5adab7d1-38bc-4ada-b7e7-b1e6f02ed09e)
+
+
