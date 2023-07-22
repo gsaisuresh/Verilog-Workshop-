@@ -834,6 +834,8 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/40c1c2fd-1702-400a-918e-e2e7779ea0b7)
 
+#### Model-2 2x4 Decoder behavioral model
+
 
 
 
