@@ -13,6 +13,17 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Verilog code which shows usage of all operators with $display and $monitor statements]
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
+2. [Day-02 Labs]
+    - [Dataflow based Design and Testbench for 4 bit full adder in Verilog]
+    - [Design and Testbench for 2:1 Mux in Verilog]
+    - [Design and Testbench for 4:1 Mux in Verilog]
+    - [Design and Testbench 2×4 Decoder in Verilog]
+    - [Design and Testbench 4×2 Encoder in Verilog]
+    - [Design and Testbench 4×2 Priority Encoder in Verilog]
+    - [Design and Testbench 4 bit comparator in Verilog]
+    - [Design and Testbench 8 bit barrel shifter in Verilog]
+    - [Design and Testbench ALU in Verilog]
+
 ## Day-01 Labs
 
 ### DataFlow based Design and Testbench for one bit half adder in Verilog
