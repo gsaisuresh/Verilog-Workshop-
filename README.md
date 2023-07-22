@@ -13,7 +13,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Verilog code which shows usage of all operators with $display and $monitor statements]
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
-2. [Day-02 Labs]
+2. [Day-02 Labs](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#day-02-lab)
     - [Dataflow based Design and Testbench for 4 bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#dataflow-based-design-and-testbench-for-4-bit-full-adder-in-verilog)
     - [Design and Testbench for 2:1 Mux in Verilog]
     - [Design and Testbench for 4:1 Mux in Verilog]
