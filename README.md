@@ -17,7 +17,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Dataflow based Design and Testbench for 4 bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#dataflow-based-design-and-testbench-for-4-bit-full-adder-in-verilog)
     - [Design and Testbench for 2:1 Mux in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#design-and-testbench-for-21-mux-in-verilog)
     - [Design and Testbench for 4:1 Mux in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#design-and-testbench-for-41-mux-in-verilog)
-    - [Design and Testbench 2×4 Decoder in Verilog]
+    - [Design and Testbench 2×4 Decoder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#design-and-testbench-24-decoder-in-verilog)
     - [Design and Testbench 4×2 Encoder in Verilog]
     - [Design and Testbench 4×2 Priority Encoder in Verilog]
     - [Design and Testbench 4 bit comparator in Verilog]
