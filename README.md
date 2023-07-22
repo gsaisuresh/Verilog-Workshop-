@@ -836,6 +836,78 @@ endmodule
 
 #### Model-2 2x4 Decoder behavioral model
 
+#### Verilog Code
+```
+module decoder_2x4_b1(EN,D,Y);
+	input EN;
+	input [1:0] D;
+	output reg [3:0] Y;
+	
+	always@(*)
+		begin
+			if(EN)
+				begin
+					if(D==2'b00)
+						Y=4'b0001;
+					else if(D==2'b01)
+						Y=4'b0010;
+					else if(D==2'b10)
+						Y=4'b0100;
+					else if(D==2'b11)
+						Y=4'b1000;
+					else $display("error");
+				end
+			else 
+			    begin
+				Y=4'b0000;
+				$display("enable not high");
+				end
+		end
+
+endmodule
+```
+
+#### Testbench code
+```
+module decoder_2x4_b1tb;
+
+	reg EN;
+	reg [1:0] D;
+	wire [3:0] Y;
+	integer i;
+	
+	decoder_2x4_b1 DUT (EN,D,Y);
+	
+	initial 
+		begin
+			i=0;
+			while(i<8)
+				begin	
+					{EN,D} = i;
+				    #10;
+					i=i+1;
+				end
+		end
+	
+	initial $monitor("time=%d, enable=%b, input=%b, output=%b",$time,EN,D,Y);
+	
+	initial #80 $finish;
+	
+endmodule
+```
+
+#### ModelSim Simulation
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/a051efb7-5f07-4cd9-a0c1-4df4080999f1)
+
+#### QuartusPrime Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/996181ca-4925-4689-aac7-f46eea8eab2e)
+
+
+
+
+
 
 
 
