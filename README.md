@@ -417,7 +417,78 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/24536cc9-a705-4431-8d09-b9cfb554850f)
 
+#### Logical Operators
 
+#### Verilog Code
+```
+module logical_op;
+
+	reg [3:0] a,b,c,d;
+	reg w1,w2,w3,w4,w5,w6,w7,w8,w9;
+	reg x1,x2,x3,x5,x7,x8,x9;
+	
+	initial
+		begin
+			a=4'b1011;
+			b=4'b0000;
+			c=4'b101x;
+			d=4'b000x;
+			
+			w1=!a; w2=!b; w3=!c; w4=!d;
+			w5=a&&b; w6=a&&c; w7=a&&d; w8=b&&c; w9=b&&d;
+			x1=a||b; x2=a||c; x3=a||d; x5=b||c; x7=b||d;
+			x8=c&&d; x9=c||d; 
+			
+			$display("a=%b, b=%b, w1=%b, w2=%b, w3=%b, w4=%b, w5=%b, w6=%b, w7=%b, w8=%b, w9=%b",a,b,w1,w2,w3,w4,w5,w6,w7,w8,w9);
+			$display("c=%b, d=%b, x1=%b, x2=%b, x3=%b, x5=%b, x7=%b, x8=%b, x9=%b",c,d,x1,x2,x3,x5,x7,x8,x9);
+		end
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f4173d04-bc06-40b6-ba21-def0b68f2c79)
+
+#### Arithmetic Operators
+
+#### Verilog code
+```
+module arithmetic_op;
+
+	reg [3:0] a,b,c,d,e,f,c1,s,b1,d1,g,b2,d2;
+	reg [3:0] w1,w2,w3,w4,w5,w6,w7,w8,w9;
+	reg [3:0] x1,x2,x3,x5,x7,x8,x9;
+	
+	initial
+		begin
+			a=4'b1011;
+			b=4'b0010;
+			c=4'b101x;
+			d=4'b000x;
+			e=4'b1111;
+			f=4'b0001;
+			g=4'b1100;
+			
+			{c1,s}=e+f;
+			{b1,d1}=g-f;
+			{b2,d2}=f-g;
+			w1=a+b; w2=a+c; w3=a+d; w4=b+d;
+			w5=b+c; w6=c+d; w7=a-b; w8=a-c; w9=b-d;
+			x1=a*b; x2=a*c; x3=b*d; x5=a/b; x7=a/d;
+			x8=a%b; x9=a%c; 
+			
+			$display("a=%b, b=%b, w1=%b, w2=%b, w3=%b, w4=%b, w5=%b, w6=%b, w7=%b, w8=%b, w9=%b",a,b,w1,w2,w3,w4,w5,w6,w7,w8,w9);
+			$display("c=%b, d=%b, x1=%b, x2=%b, x3=%b, x5=%b, x7=%b, x8=%b, x9=%b",c,d,x1,x2,x3,x5,x7,x8,x9);
+			$display("e=%b, f=%b, carry=%b, sum=%b",e,f,c1,s);
+			$display("g=%b, f=%b, borrow=%b, diff=%b",g,f,b1,d1);
+			$display("f=%b, g=%b, borrow=%b, diff=%b",f,g,b2,d2);
+		end
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/3b7e60ac-385f-4d4d-a500-d32cf58c0272)
 
 
 ## Day-02 Lab
