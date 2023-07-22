@@ -656,4 +656,67 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0d9f9ddd-93d8-4b2d-be14-ee0a52c2f855)
 
+#### Model-3 : 4:1 Mux Behavioral modelling
+
+#### Verilog code
+```
+module mux_4_1_b(I,S,Y);
+	input [3:0]I;
+	input [1:0]S;
+	output reg Y;
+	
+	always@(*)
+		begin
+			case(S)
+				2'd0 : Y=I[0];
+				2'd1 : Y=I[1];
+				2'd2 : Y=I[2];
+				2'd3 : Y=I[3];
+			    default : $display("error");
+			endcase
+		end
+
+endmodule
+```
+
+#### Testbench code
+```
+module mux_4_1_btb;
+	reg [3:0]I;
+	reg [1:0]S;
+	wire Y;
+	integer i;
+	
+	mux_4_1_b DUT(I,S,Y);
+	
+	initial 
+		begin
+			for(i=0;i<64;i=i+1)
+				begin
+					{I,S} = i;
+					#10;
+				end
+		end
+		
+	initial 
+		$monitor("time=%d, I=%b, S=%b, Y=%b", $time,I,S,Y);
+	
+	initial #640 $finish;
+	
+endmodule
+```
+
+#### ModelSim Simulation
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f587539a-5133-4d2f-9df1-a8e31a8c2986)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/88c06a27-1f05-4dc6-9cce-ff93cbd066a1)
+
+#### QuartusPrime Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/655d30bb-fb68-4cef-9706-a1ffc899271b)
+
+
+
+ 
 
