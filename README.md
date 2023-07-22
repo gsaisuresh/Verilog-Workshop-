@@ -375,6 +375,50 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/4d6d9874-374e-49d6-8c0f-5ab114ace0d0)
 
+#### Verilog code which shows usage of all operators with $display statement
+
+#### Bitwise Operators
+
+#### Verilog Code
+```
+module bitwise_op;
+	
+	reg [3:0] a,b,c,d;
+	reg [3:0] w1,w2,w3,w4,w5,w6,w7,w8;
+	reg [3:0] x1,x2,x3,x4,x5,x6,x7,x8,x9;
+	
+	initial 
+		begin
+			a=4'b1011; 
+			b=4'b0011;
+			c=4'b101x;
+			d=4'b0x1x;
+			
+			w1= ~a; w2=~b;
+			w3= a&b;
+			w5= a | b;
+			w7= a^b;
+			w8= a ~^ b;
+			
+			x1= ~c; x2=~d;
+			x3= a&c;
+			x5= a | c;
+			x7= a^c;
+			x8= a ~^ c;
+			x9= c ^ d;
+			
+			$display("a=%b, b=%b, w1=%b, w2=%b, w3=%b, w5=%b, w7=%b, w8=%b",a,b,w1,w2,w3,w5,w7,w8);
+			$display("c=%b, d=%b, x1=%b, x2=%b, x3=%b, x5=%b, x7=%b, x8=%b, x9=%b",c,d,x1,x2,x3,x5,x7,x8,x9);
+		end
+endmodule
+```
+
+#### ModelSim Result 
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/24536cc9-a705-4431-8d09-b9cfb554850f)
+
+
+
 
 ## Day-02 Lab
 
