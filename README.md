@@ -436,3 +436,117 @@ endmodule
 #### Quartus Prime Synthesis Result
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/85527631-8eb1-4680-ae06-bd547f5ad750)
+
+### Design and Testbench for 2:1 Mux in Verilog
+
+#### Model-1 : 2:1 Dataflow Modelling
+
+#### Verilog code
+```
+module mux_2_1_d (input [1:0]I,input S, output Y);
+
+	assign Y = S ? I[1] : I[0];
+	
+endmodule 
+```
+
+#### Testbench code
+```
+module mux_2_1_dtb;
+	reg [1:0] I;
+	reg S;
+	wire Y;
+	
+	mux_2_1_d DUT(I,S,Y);
+	
+	task inputs(input [1:0]A,input B);
+		begin
+			{I,S} = {A,B};
+		end
+	endtask
+	
+	initial
+		begin
+			inputs(2'b00,0);
+			#10;
+			inputs(2'b01,0);
+			#10;
+			inputs(2'b10,1);
+			#10;
+			inputs(2'b00,1);
+			#10;
+		end
+	
+	initial
+		$monitor("time=%d, I=%b, S=%b, Y=%b",$time,I,S,Y);
+		
+	initial #50 $finish;
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/7efff2f3-7bbb-4c66-bdd8-105b99a99d9d)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/42a6624e-05c4-4065-9639-c5b043e20ed9)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/37e79483-4213-4a17-bd50-e67a37fb76a9)
+
+#### Model-2 : 2:1 Behavioral Modelling
+
+#### Verilog Code
+```
+module mux_2_1_b(I,S,Y);
+	input [1:0]I;
+	input S;
+	output reg Y;
+	
+	always@(*)
+		begin
+			if(S) 
+				Y = I[1];
+			else
+				Y = I[0];
+	    end
+			
+endmodule
+```
+
+#### Testbench code
+```
+module mux_2_1_btb;
+	reg [1:0] I;
+	reg S;
+	wire Y;
+	integer i;
+	
+	mux_2_1_b DUT(I,S,Y);
+	
+	initial
+		begin
+			for(i=0;i<8;i=i+1)
+				begin
+					{I,S}=i;
+					#10;
+				end
+		end
+	
+	initial
+		$monitor("time=%d, I=%b, S=%b, Y=%b",$time,I,S,Y);
+		
+	initial #80 $finish;
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/62f73d0b-7a3c-44ad-9adb-7b0baf419693)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/a7957efe-514c-4a9e-b26f-a3d97cee7ba6)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/595ec8e7-587d-411f-81e2-f65516f1b6a9)
+
