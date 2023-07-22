@@ -14,7 +14,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
 2. [Day-02 Labs]
-    - [Dataflow based Design and Testbench for 4 bit full adder in Verilog]
+    - [Dataflow based Design and Testbench for 4 bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#dataflow-based-design-and-testbench-for-4-bit-full-adder-in-verilog)
     - [Design and Testbench for 2:1 Mux in Verilog]
     - [Design and Testbench for 4:1 Mux in Verilog]
     - [Design and Testbench 2×4 Decoder in Verilog]
