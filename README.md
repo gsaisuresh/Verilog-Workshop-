@@ -15,7 +15,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
 
 2. [Day-02 Labs](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#day-02-lab)
     - [Dataflow based Design and Testbench for 4 bit full adder in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#dataflow-based-design-and-testbench-for-4-bit-full-adder-in-verilog)
-    - [Design and Testbench for 2:1 Mux in Verilog]
+    - [Design and Testbench for 2:1 Mux in Verilog](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#design-and-testbench-for-21-mux-in-verilog)
     - [Design and Testbench for 4:1 Mux in Verilog]
     - [Design and Testbench 2×4 Decoder in Verilog]
     - [Design and Testbench 4×2 Encoder in Verilog]
@@ -439,7 +439,7 @@ endmodule
 
 ### Design and Testbench for 2:1 Mux in Verilog
 
-#### Model-1 : 2:1 Dataflow Modelling
+#### Model-1 : 2:1 Mux Dataflow Modelling
 
 #### Verilog code
 ```
@@ -494,7 +494,7 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/37e79483-4213-4a17-bd50-e67a37fb76a9)
 
-#### Model-2 : 2:1 Behavioral Modelling
+#### Model-2 : 2:1 Mux Behavioral Modelling
 
 #### Verilog Code
 ```
