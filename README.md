@@ -490,6 +490,43 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/3b7e60ac-385f-4d4d-a500-d32cf58c0272)
 
+#### Equality Operators
+
+#### Verilog Code
+```
+module equality_op;
+
+	reg [3:0] a,b,c,d,e,f,g,h,i,j;
+	reg w1,w2,w3,w4,w5,w6,w7,w8,w9;
+	reg x1,x2,x3,x5,x7,x8,x9;
+	
+	initial
+		begin
+			a=4'b1011;	b=4'b0011;
+			c=4'b10x1;	d=4'b00x1;
+			e=4'b10z1; f=4'b00z1;
+			g=4'b10x1; h=4'b00x1;
+			i=4'b10z1; j=4'b00z1;
+			
+			w1=(a==b); w2=(a==c); w3=(a==e);
+			w4=(a!=b); w5=(a!=c); w6=(a!=e);
+			w7=(a!==c); w8=(a===c); w9=(a===e);
+			x1=(c===e); x2=(d===f); x3=(c!==e);
+			x5=(c===g); x7=(d===h); x8=(i===e);
+			x9=(f===j);
+			
+			$display("a=%b ,b=%b ,c=%b ,d=%b ,e=%b ,f=%b ,g=%b ,h=%b ,i=%b ,j=%b",a,b,c,d,e,f,g,h,i,j);
+			$display("w1=%b, w2=%b, w3=%b, w4=%b, w5=%b, w6=%b, w7=%b, w8=%b, w9=%b",w1,w2,w3,w4,w5,w6,w7,w8,w9);
+			$display("x1=%b, x2=%b, x3=%b, x5=%b, x7=%b, x8=%b, x9=%b",x1,x2,x3,x5,x7,x8,x9);
+		end
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/76d8b7e2-c060-4464-b3b4-1d189b99dfcc)
+
+
 
 ## Day-02 Lab
 
