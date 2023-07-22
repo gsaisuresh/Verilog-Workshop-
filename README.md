@@ -375,3 +375,64 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/4d6d9874-374e-49d6-8c0f-5ab114ace0d0)
 
+
+## Day-02 Lab
+
+### Dataflow based Design and Testbench for 4 bit full adder in Verilog
+
+#### Verilog Code 
+```
+module four_bit_adder_d(a,b,cin,sum,carryout);
+	input [3:0]a,b;
+	input cin;
+	output [3:0]sum;
+	output carryout;
+	
+	assign {carryout,sum} = a+b+cin;
+	
+endmodule
+```
+
+#### Testbench code
+```
+module four_bit_adder_dtb();
+	reg [3:0]a,b;
+	reg cin;
+	wire [3:0]sum;
+	wire carryout;
+	
+	four_bit_adder_d DUT(a,b,cin,sum,carryout);
+	
+	initial 
+		$monitor("time = %d, a=%b, b=%b, cin=%b, sum=%b, carryout=%b",$time,a,b,cin,sum,carryout);
+		
+	initial
+		begin	
+		{a,b,cin}=3'b000;
+		
+		repeat(16)
+			begin
+				#10 a=a+1;
+				repeat(16)
+					begin	
+						#10 b=b+1;
+						repeat(2)
+							#10 cin=~cin;
+					end
+			end
+		end
+		
+	initial #450 $finish;
+	
+endmodule
+```
+
+#### ModelSim Simulation Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f2d2970b-88bb-4a12-950b-e9ddae55d439)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/c64b7755-6e0b-4875-8628-8ed3c3fd1b4e)
+
+#### Quartus Prime Synthesis Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/85527631-8eb1-4680-ae06-bd547f5ad750)
