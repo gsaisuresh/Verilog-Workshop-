@@ -603,4 +603,57 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/5adab7d1-38bc-4ada-b7e7-b1e6f02ed09e)
 
+#### Model-2 : 4:1 Mux Dataflow modelling
+
+#### Verilog code
+```
+module mux_4_1_d2(I,S,Y);
+	input [3:0]I;
+	input [1:0]S;
+	output Y;
+	
+    assign Y = I[S] ;
+
+endmodule 
+```
+
+#### Testbench code
+```
+module mux_4_1_d2tb;
+	reg [3:0]I;
+	reg [1:0]S;
+	wire Y;
+	integer i;
+	
+	mux_4_1_d2 DUT(I,S,Y);
+	
+	initial 
+		begin
+			i=0;
+			while(i<64)
+				begin
+					{I,S} = i;
+					#10;
+					i=i+1;
+				end
+		end
+		
+	initial 
+		$monitor("time=%d, I=%b, S=%b, Y=%b", $time,I,S,Y);
+	
+	initial #640 $finish;
+	
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/5da1416c-5335-4da5-b2fb-c687d1ebe9c2)
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/f6b3bc8c-6623-4140-b5a3-f0bcf0847e88)
+
+#### QurtusPrime Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0d9f9ddd-93d8-4b2d-be14-ee0a52c2f855)
+
 
