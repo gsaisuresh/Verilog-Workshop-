@@ -14,7 +14,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
       - [Bitwise Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#bitwise-operators)
       - [Logical Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#logical-operators)
       - [Arithmetic Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#arithmetic-operators)
-      - [Equality Operators]
+      - [Equality Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#equality-operators)
       - [Relational Operators]
       - [Shift Operators]
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
