@@ -526,6 +526,75 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/76d8b7e2-c060-4464-b3b4-1d189b99dfcc)
 
+#### Relational Operators
+
+#### Verilog Code
+```
+module relational_op;
+	
+	reg [3:0] a,b,c,d,e,f;
+	reg w1,w2,w3,w4,w5,w6,w7,w8,w9;
+	reg x1,x2,x3;
+	
+	initial
+		begin
+			a=4'b1100; b=4'b0011; e=4'b0011; f=4'b1100;
+			c=4'b1x0x; d=4'b1z00;
+			
+			w1=a>b; w2=a<b; w3=a>=b; w4=b>=e; w5=a>=f;
+			w6=a>c; w7=a>=c; w8=a>d; w9=a>=d; 
+			x1=a<c; x2=a<=c; x3=a<d;
+			
+			$display("a=%b ,b=%b ,c=%b ,d=%b ,e=%b ,f=%b",a,b,c,d,e,f);
+			$display("w1=%b, w2=%b, w3=%b, w4=%b, w5=%b, w6=%b, w7=%b, w8=%b, w9=%b",w1,w2,w3,w4,w5,w6,w7,w8,w9);
+			$display("x1=%b, x2=%b, x3=%b",x1,x2,x3);
+		end
+
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/c700b2a5-fae1-469a-ad74-2cf84640aae8)
+
+#### Shift Operators
+
+#### Verilog Code
+```
+module shift_op;
+
+	reg [3:0] a,b,c,d,e,f;
+	reg signed [3:0] a1,b1,c1,d1,e1,f1;
+	reg [3:0] w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12;
+	reg [3:0] x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12;
+	reg [3:0] y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12;
+	
+	initial 
+		begin
+			a=4'b1011; b=4'b0011; c=4'b10x1; d=4'bxx01; e=4'bzz01; f=4'bxxxx;
+			a1=4'sb1011; b1=4'sb0011; c1=4'sb10x1; d1=4'sbxx01; e1=4'sbzz01; f1=4'sbxxxx;
+			//logical shift operators
+			w1=a<<1; w2=a>>1; w3=b<<1; w4=b>>1; w5=c<<1; w6=c>>1; w7=d>>1; w8=d<<1; w9=e<<1; w10=e>>1; w11=f<<1; w12=f>>1;
+			
+			//arithmetic operators
+			x1=a<<<1; x2=a>>>1; x3=b<<<1; x4=b>>>1; x5=c<<<1; x6=c>>>1; x7=d>>>1; x8=d<<<1; x9=e<<<1; x10=e>>>1; x11=f<<<1; x12=f>>>1;
+			
+			y1=a1<<<1; y2=a1>>>1; y3=b1<<<1; y4=b1>>>1; y5=c1<<<1; y6=c1>>>1; y7=d1>>>1; y8=d1<<<1; y9=e1<<<1; y10=e1>>>1; y11=f1<<<1; y12=f1>>>1;
+			
+			$display("a=%b ,b=%b ,c=%b ,d=%b ,e=%b ,f=%b",a,b,c,d,e,f);
+			$display("a1=%b ,b1=%b ,c1=%b ,d1=%b ,e1=%b ,f1=%b",a1,b1,c1,d1,e1,f1);
+			$display("w1=%b, w2=%b, w3=%b, w4=%b, w5=%b, w6=%b, w7=%b, w8=%b, w9=%b, w10=%b, w11=%b, w12=%b",w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12);
+			$display("x1=%b, x2=%b, x3=%b, x4=%b, x5=%b, x6=%b, x7=%b, x8=%b, x9=%b, x10=%b, x11=%b, x12=%b",x1,x2,x3,x4,x5,x6,x7,x8,x9,x10,x11,x12);
+			$display("y1=%b, y2=%b, y3=%b, y4=%b, y5=%b, y6=%b, y7=%b, y8=%b, y9=%b, y10=%b, y11=%b, y12=%b",y1,y2,y3,y4,y5,y6,y7,y8,y9,y10,y11,y12);
+		end
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/e856510c-8b85-46e4-9117-90732a75f2e8)
+
+
 
 
 ## Day-02 Lab
