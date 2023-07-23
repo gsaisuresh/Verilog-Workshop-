@@ -13,7 +13,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Verilog code which shows usage of all operators with $display statement](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#verilog-code-which-shows-usage-of-all-operators-with-display-statement)
       - [Bitwise Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#bitwise-operators)
       - [Logical Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#logical-operators)
-      - [Arithmetic Operators]()
+      - [Arithmetic Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#arithmetic-operators)
       - [Equality Operators]
       - [Relational Operators]
       - [Shift Operators]
