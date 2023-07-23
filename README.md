@@ -11,6 +11,12 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Structural Design and Testbench for one bit full adder in Verilog using primitives](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#structural-design-and-testbench-for-one-bit-full-adder-in-verilog-using-primitives)
     - [Structural Design and Testbench for one bit full adder in Verilog using HalfAdder](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#structural-design-and-testbench-for-one-bit-full-adder-in-verilog-using-halfadder)
     - [Verilog code which shows usage of all operators with $display statement](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#verilog-code-which-shows-usage-of-all-operators-with-display-statement)
+      - [Bitwise Operators]
+      - [Logical Operators]
+      - [Arithmetic Operators]
+      - [Equality Operators]
+      - [Relational Operators]
+      - [Shift Operators]
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
 2. [Day-02 Labs](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#day-02-lab)
