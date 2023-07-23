@@ -17,6 +17,7 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
       - [Equality Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#equality-operators)
       - [Relational Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#relational-operators)
       - [Shift Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#shift-operators)
+      - [Concatenation Operator]()
     - [Create a verilog task for conversion of Celsius into Fahrenheit]
 
 2. [Day-02 Labs](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#day-02-lab)
@@ -600,6 +601,32 @@ endmodule
 
 ![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/e856510c-8b85-46e4-9117-90732a75f2e8)
 
+#### Concatenation Operator
+
+#### Verilog Code
+```
+module concat_op;
+
+	reg [3:0] a,b,c,d,e,f,g;
+	reg [11:0] h,i,j,k,l,m;
+	
+	initial 
+		begin
+			a=4'b1011; b=4'd2; c=4'bx1; d=4'bz0; e='h11; f='ozx0; g=4'b?0?;
+			
+			h={a,b,c}; 			i={c,d};
+			j={e,f};			k={3{g}};
+			l={h[11:9],{2{a}}}; m={{3{c}},{3{d}},j[11:9]};
+			
+			$display("a=%b, b=%b, c=%b, d=%b, e=%b, f=%b, g=%b",a,b,c,d,e,f,g);
+			$display("h=%b, i=%b, j=%b, k=%b, l=%b, m=%b",h,i,j,k,l,m);
+		end
+endmodule
+```
+
+#### ModelSim Result
+
+![image](https://github.com/gsaisuresh/Verilog-Workshop-/assets/135144937/0ade1675-11d7-4988-a40e-c55feb780b80)
 
 
 
