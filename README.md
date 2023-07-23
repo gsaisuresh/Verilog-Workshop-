@@ -12,8 +12,8 @@ This is part of Verilog Workshop organised by vlsideepdive. Here I include the l
     - [Structural Design and Testbench for one bit full adder in Verilog using HalfAdder](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#structural-design-and-testbench-for-one-bit-full-adder-in-verilog-using-halfadder)
     - [Verilog code which shows usage of all operators with $display statement](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#verilog-code-which-shows-usage-of-all-operators-with-display-statement)
       - [Bitwise Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#bitwise-operators)
-      - [Logical Operators]
-      - [Arithmetic Operators]
+      - [Logical Operators](https://github.com/gsaisuresh/Verilog-Workshop-/blob/main/README.md#logical-operators)
+      - [Arithmetic Operators]()
       - [Equality Operators]
       - [Relational Operators]
       - [Shift Operators]
